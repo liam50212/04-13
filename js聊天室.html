@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body,html{
+            margin: 0;
+            padding: 0;
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+        }
+        
+        nav{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+
+        .nav-L{
+            width: 300px;
+            display: flex;
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+
+        .avatar{
+            width: 80px;
+            height: 80px;
+            border: 1px solid white;
+            border-radius: 50px;
+            background-image: url(./img/dog1.jpg);
+            background-size: cover;
+            position: relative;
+        }
+
+        .circle-g{
+            position: absolute;
+            left: 120px;
+            top: 65px;
+            color: greenyellow;
+        }
+
+        .username > h1 ,p{
+            margin: 0;
+        }
+
+        main{
+            width: 100%;
+            height: calc(100vh - 200px);
+        }
+
+        .chat-R{
+            width:100% ;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0 0;
+        }
+
+        .chat-R > .massage{
+            max-width: 800px;
+            /* height: 50px; */
+            border: 1px solid black;
+            border-radius: 30px;
+            background-color: lightblue;
+            word-wrap: break-word;
+            padding: 10px;
+        }
+
+        .chat-R > .profile-picture{
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: white;
+            margin:0 10px;
+            background-image: url(./img/dog1.jpg);
+            background-size: cover;
+        }
+
+        .chat-L{
+            width:100% ;
+            display: flex;
+            padding: 20px 0 0;
+        }
+
+        .chat-L > .massage{
+            max-width: 800px;
+            /* height: 50px; */
+            border: 1px solid black;
+            border-radius: 30px;
+            background-color: lightgreen;
+            word-wrap: break-word;
+            padding: 10px;
+        }
+
+        .chat-L > .profile-picture{
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: white;
+            margin:0 10px;
+            background-image: url(./img/dog2.jpg);
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+        footer{
+            width: 100%;
+            height: 100px;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+        
+        .content{
+            display: flex;
+        }
+
+        input{
+            outline-style: none ;
+            border: 1px solid #ccc; 
+            border-radius: 30px;
+            padding: 25px 0;
+            width: 90%;
+            margin-left: 50px;
+            margin-top: 5px;
+            background-color: grey;
+            font-size: 24px;
+        }
+
+        button{
+            width: 100px;
+            height: 70px;
+            border-radius: 30px;
+            background-color: grey;
+            margin-top: 10px;
+            margin-left: 10px;
+            outline:none;
+            box-shadow:none;
+        }
+        
+        .time{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 100px;
+        }
+
+        .time2{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-L">
+                <div class="avatar"></div>
+                <div class="light"></div>
+                <div class="username">
+                    <h1>雞寶(ChickBot)</h1>
+                    <p>(Chinese Chatbot)</p>
+                    <a href="">
+                        <i class="circle-g bi bi-circle-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="">
+                <i class="bi bi-x" style="font-size: 2rem";></i>
+            </a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="chat-R">
+            <div class="massage">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate eius dolorem inventore facere nam, laborum hic quod sunt consectetur reiciendis maxime fugiat eligendi dolore, corporis cum aliquam? Nulla, vero neque!</div>
+            <div class="profile-picture"></div>
+        </div>
+        <div class="time">上午11:14:03</div>
+
+        <div class="chat-L">
+            <div class="profile-picture"></div>
+            <div class="massage">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque commodi fuga adipisci deleniti repudiandae, vitae tenetur at ab eum debitis ut numquam? Consectetur vel tenetur animi sequi doloremque? Sapiente, delectus?</div>
+        </div>
+        <div class="time2">上午11:14:08</div>
+        
+    </main>
+
+    <footer>
+        <form class="content" action="">
+            <input type="text">
+            <button>
+                <i class="bi bi-caret-right"  style="font-size: 2rem";></i>
+            </button>
+        </form>
+    </footer>
+</body>
+</html>
