@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年齡</th>
+                <th>性別</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alex</td>
+                <td>17</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        // 物件(object)
+        // 空物件
+        var box = {};
+        
+        // {鍵:值} {key:value}
+        // 1.鍵名稱要用雙引號包著
+        // 2.鍵名稱盡量用英文
+
+        // 值可以放任意資料型態
+        // var box2 = {"name":'123'};
+        // console.log(box2["name"]);
+
+        // 多組鍵值請以逗號分隔{"鍵":值,"鍵":值}
+        // var box2 = {"name":'leo',"age":27,"gender":"male"};
+        // console.log(box2["age"]);
+
+        var box2 = {"name":'123'};
+        // 新增 讀取 刪除 更新  CRUD creat Read Update Delete
+        box2["age"] = 17;
+        console.log(box2);
+
+
+        box2["name"] = 17;
+        console.log(box2);
+
+        box2["age"] = 17;
+        delete box2["age"];
+        console.log(box2);
+
+        var box2 = 
+        [
+            {"name":'leo',"age":27,"gender":"male"},
+            {"name":'leo',"age":27,"gender":"male"},
+            {"name":'leo',"age":27,"gender":"male"}
+        ];
+    </script>
+</body>
+</html>
