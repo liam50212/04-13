@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+    <script>
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-225914CE-0B4B-4ABD-87E1-B3878F28C42A&format=JSON')
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(result) {
+            var data = JSON.parse(result)["records"]["location"];
+            // console.log(data);
+
+            var section = document.querySelector('section');
+            section.innerHTML = '';
+            getStartTime(data);
+            data.forEach(function(item) {
+                // section.innerHTML += 
+                // `<div>${item["locationName"]}</div>`
+                // <div>${item["學校名稱"]}</div>
+                // <div>${item["上課日"]}</div>
+
+                // if(item["locationName"] == '嘉義縣'){
+                    section.innerHTML += 
+                    `<div>${item["locationName"]}</div>
+                    <div>${item["weatherElement"][0]["time"][0]["startTime"]}</div>`
+                // }
+
+                // console.log(item["weatherElement"][0]["time"][0]["startTime"]);
+            });
+
+
+
+        });
+
+        function getStartTime(data){
+            var results = [];
+            data.forEach(function(loc) {
+                var arrLocation = {};
+                arrLocation["Location"] = loc["locationName"];
+
+                loc["weatherElement"].forEach(function(t, index) {
+                    arrLocation[`startTime-${index}`] = t["time"]
+                });
+
+                results.push(arrLocation);
+                
+            });
+            console.log(results);
+            return results;
+        };
+    </script>
+</body>
+</html>
