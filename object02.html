@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <section >
+        
+    </section>
+
+
+    <script>
+        fetch('https://datacenter.taichung.gov.tw/swagger/OpenData/1c5e97c9-8232-419b-8109-e3b0ed585676')
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(result) {
+            var data = JSON.parse(result);
+            console.log(result);
+
+            var section = document.querySelector('section');
+            section.innerHTML = '';
+
+            data.forEach(function(item) {
+                section.innerHTML += 
+                `<div>${item["區別"]}</div>
+                <div>${item["學校名稱"]}</div>
+                <div>${item["上課日"]}</div>`
+            });
+
+
+
+
+
+
+
+
+
+
+            // var obj = JSON.parse(result,index);
+            // var answer = document.getElementById("demo");
+            // answer.innerHTML = result;
+            // var tbody = document.querySelector('tbody');
+            // result.forEach(function(data) {
+            //     tbody.innerHTML += 
+            //     `<tr>
+            //         <td>${data["names"]}</td>
+            //         <td>${data["age"]}</td>
+            //         <td>${data["gender"]}</td>
+            //     </tr>`;
+            // });
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        姓名<input id="names" type="text"><br>
+        年齡<input id="age" type="text"><br>
+        性別<input id="gender" type="text"><br>
+        <button id="submit">送出</button>
+        <button id="search">查看</button>
+        <button id="reset">清除</button>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年齡</th>
+                <th>性別</th>
+                <th>功能</th>
+                <th>修改</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var allData = [];
+
+        var tbody = document.querySelector('tbody');
+
+        function updateView() {
+            tbody.innerHTML = '';
+
+            allData.forEach(function (data,index) {
+                tbody.innerHTML += 
+                `<tr>
+                    <td>${data["names"]}</td>
+                    <td>${data["age"]}</td>
+                    <td>${data["gender"]}</td>
+                    <td><button class="delete-btn" data-index="${index}">刪除</button></td>
+                    <td><button class="fix-btn" fix-index="${index}">修改</button></td>
+                </tr>`;
+            })
+        } 
+
+        function delBtnAddClickEven() {
+            var deleteBtns = document.querySelectorAll('.delete-btn');
+            deleteBtns.forEach(function(deleteBtn){
+                deleteBtn.addEventListener('click',function(){
+                    
+                    var index = this.getAttribute('data-index');
+                    allData.splice(index,1);
+                    console.log( allData);
+
+                    updateView()
+
+                    delBtnAddClickEven()
+                    
+
+                });
+
+            })
+        }
+
+
+        // function fixBtnAddClickEven() {
+        //     var fixBtns = document.querySelectorAll('.fix-btn');
+        //     fixBtns.forEach(function(fixBtn){
+        //         fixBtn.addEventListener('click',function(){
+                    
+        //             var index = this.getAttribute('fix-index');
+        //             allData.splice(index,1);
+        //             console.log( allData);
+
+
+        //             var nameValue = document.querySelector('#names').value;
+        //             var ageValue = document.querySelector('#age').value;
+        //             var genderValue = document.querySelector('#gender').value;
+        //             var newData = {
+        //                 "names":nameValue,
+        //                 "age":ageValue,
+        //                 "gender":genderValue
+        //             }
+
+        //             tbody.innerHTML = '';
+        //             allData.push(newData)
+
+        //             allData.forEach(function (data,index) {
+        //             tbody.innerHTML += 
+        //             `<tr>
+        //                 <td>${data["names"]}</td>
+        //                 <td>${data["age"]}</td>
+        //                 <td>${data["gender"]}</td>
+        //                 <td><button class="delete-btn" data-index="${index}">刪除</button></td>
+        //                 <td><button class="fix-btn" fix-index="${index}">修改</button></td>
+        //             </tr>`;
+        //             })
+
+        //             fixBtnAddClickEven()
+
+        //         });
+
+        //     })
+        // }
+        
+        var submit = document.querySelector('#submit');
+        submit.addEventListener('click',function(){
+            var nameValue = document.querySelector('#names').value;
+            var ageValue = document.querySelector('#age').value;
+            var genderValue = document.querySelector('#gender').value;
+            var newData = {
+                "names":nameValue,
+                "age":ageValue,
+                "gender":genderValue
+            }
+            allData.push(newData)
+
+            updateView()
+        
+            delBtnAddClickEven()
+
+            // fixBtnAddClickEven()
+        })
+
+
+        var search =  document.querySelector('#search');
+        search.addEventListener('click',function () {
+            console.log(allData);
+        
+        
+        });
+
+
+
+        var resetBtn = document.querySelector('#reset');
+        resetBtn.addEventListener('click',function () {
+            names.value = '';
+            age.value = '';
+            gender.value = '';
+            // tbody.innerHTML = '';
+        })
+
+        
+        
+
+        
+
+    </script>
+
+</body>
+</html>
