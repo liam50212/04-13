@@ -6,21 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        section{
+        /* * {
+            box-sizing: border-box;
+        }
+
+        body , html {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
             width: 200px;
             height: 200px;
             border: 1px solid black;
             text-align: center;
         }
-        div{
+
+        div {
             width: 100px;
             height: 100px;
             border: 1px solid black;
-        }
+        } */
+
     </style>
 </head>
 <body>
-    <section></section>
+    <section>
+        <div></div>
+    </section>
+
+
     <script>
         fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-225914CE-0B4B-4ABD-87E1-B3878F28C42A&format=JSON')
         .then(function(response) {
@@ -28,10 +43,10 @@
         })
         .then(function(result) {
             var data = JSON.parse(result)["records"]["location"];
-            // console.log(data);
+            console.log(result);
 
             var section = document.querySelector('section');
-            section.innerHTML = '';
+            section.innerHTML = result;
             getStartTime(data);
             data.forEach(function(item) {
                 // section.innerHTML += 
@@ -52,22 +67,22 @@
 
         });
 
-        function getStartTime(data){
-            var results = [];
-            data.forEach(function(loc) {
-                var arrLocation = {};
-                arrLocation["Location"] = loc["locationName"];
+        // function getStartTime(data){
+        //     var results = [];
+        //     data.forEach(function(loc) {
+        //         var arrLocation = {};
+        //         arrLocation["Location"] = loc["locationName"];
 
-                loc["weatherElement"].forEach(function(t, index) {
-                    arrLocation[`startTime-${index}`] = t["time"]
-                });
+        //         loc["weatherElement"].forEach(function(t, index) {
+        //             arrLocation[`startTime-${index}`] = t["time"]
+        //         });
 
-                results.push(arrLocation);
+        //         results.push(arrLocation);
                 
-            });
-            console.log(results);
-            return results;
-        };
+        //     });
+        //     console.log(results);
+        //     return results;
+        // };
     </script>
 </body>
 </html>
