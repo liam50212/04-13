@@ -2,9 +2,15 @@
   width: 100px;
   height: 20px;
   border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 18px;
   letter-spacing: 1.5px;
   font-weight: 800;
@@ -26,15 +32,6 @@
   background-color: #ff0000;
 }
 
-.block::after {
-  content: '';
-  width: 100px;
-  height: 100px;
-  border-radius: 0;
-  position: absolute;
-  background-color: #fff;
-}
-
 .block .box {
   width: 100px;
   height: 100px;
@@ -50,10 +47,49 @@
   background-color: #32a8a8;
 }
 
+.block .box .btn-blue:hover {
+  background-color: #94dfdf;
+}
+
 .block .box .btn-red {
   background-color: #c51b40;
 }
 
 .block .box .btn-yellow {
   background-color: #a4ca3d;
+}
+
+.block ul .list-item:nth-of-type(1) {
+  width: 45px;
+  height: 100px;
+  border-radius: 0;
+  border: solid 1px #000;
+}
+
+.block ul .list-item:nth-of-type(2) {
+  width: 169px;
+  height: 100px;
+  border-radius: 0;
+  border: solid 1px #000;
+}
+
+.block ul .list-item:nth-of-type(3) {
+  width: 52px;
+  height: 100px;
+  border-radius: 0;
+  border: solid 1px #000;
+}
+
+.block ul .list-item:nth-of-type(4) {
+  width: 326px;
+  height: 100px;
+  border-radius: 0;
+  border: solid 1px #000;
+}
+
+.block ul .list-item:nth-of-type(5) {
+  width: 414px;
+  height: 100px;
+  border-radius: 0;
+  border: solid 1px #000;
 }

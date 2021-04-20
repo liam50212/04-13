@@ -17,12 +17,12 @@
     }
 
     // 兩個冒號:: 偽元素
-    &::after {
-        content:'';
-        @include size(100px, 100px);
-        position: absolute;
-        background-color: #fff;
-    }
+    // &::after {
+        // content:'#{$text}';
+        // @include size(100px, 100px);
+        // position: absolute;
+        // background-color: #fff;
+    // }
 
 
     .box {
@@ -42,6 +42,10 @@
         .btn-blue {
             @extend %btn;
             background-color: $btn_blue;
+
+            &:hover {
+                background-color: $btn_blue_hover;
+            }
         }
 
         .btn-red {
@@ -52,6 +56,15 @@
         .btn-yellow {
             @extend %btn;
             background-color: $btn_yellow;
+        }
+    }
+
+    ul {
+        @for $i from 1 to 6 {
+            .list-item:nth-of-type(#{$i}) {
+                @include size(round(100px * $i * random()), 100px);
+                border: solid 1px #000;
+            }
         }
     }
 }

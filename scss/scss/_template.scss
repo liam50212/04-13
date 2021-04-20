@@ -1,21 +1,6 @@
-@mixin size($w, $h, $bdrs: 0) {
-    width: $w;
-    height: $h;
-    border-radius: $bdrs;
-}
-
-@mixin flex($j, $a) {
-    display: flex;
-    justify-content: $j;
-    align-items: $a;
-}
-
 %btn {
-    // width: 100px;
-    // height: 20px;
     @include size(100px, 20px, 15px);
     @include flex(center, center);
-    // background-color: $btn_color;
     font-size: $btn_fz;
     letter-spacing: 1.5px;
     font-weight: 800;

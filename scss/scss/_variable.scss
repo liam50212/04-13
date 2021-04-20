@@ -1,4 +1,19 @@
 $btn_blue: #32a8a8;
+$btn_blue_hover: lighten($btn_blue, 30%);
 $btn_red: #c51b40;
 $btn_yellow: #a4ca3d;
 $btn_fz: 18px;
+
+// $text: "hello world";
+
+@mixin size($w, $h, $bdrs: 0) {
+    width: $w;
+    height: $h;
+    border-radius: $bdrs;
+}
+
+@mixin flex($j, $a) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/timer.css">
+</head>
+<body>
+    <div class="load-page">
+        <div class="loadbar">
+            <div class="loading"></div>
+        </div>
+        <div class="progress">0%</div>
+    </div>
+    
+    <script>
+        var load_page = document.querySelector('.load-page');
+        var loading = document.querySelector('.loading');
+        var progress = document.querySelector('.progress');
+        var load_time = Math.random(0, 100);
+        var count = 0;
+        // setInterval 會不停地重複執行，直到他被關閉為止
+        var timer2 = setInterval(function() {
+            count++;
+            loading.style.width = count + '%';
+            progress.innerHTML  = count + '%';
+
+            if (count >= 100) {
+                load_page.classList.add('complate');
+                clearInterval(timer2);
+
+                setTimeout(function() {
+                    load_page.remove();
+                }, 1000);
+            }
+        }, 1000);
+
+        // 停止執行該 Interval
+        // clearInterval(timer2);
+    </script>
+</body>
+</html>
