@@ -1,0 +1,57 @@
+@import 'variable';
+@import 'template';
+
+.block {
+    @include size(600px, 600px);
+    border: 1px solid #000;
+    opacity: 1;
+
+    // 一個冒號: 偽類
+    &:hover {
+        background-color: #f9f900;
+
+        .box {
+            background-color: #ff0000;
+            
+        }
+    }
+
+    // 兩個冒號:: 偽元素
+    &::after {
+        content:'';
+        @include size(100px, 100px);
+        position: absolute;
+        background-color: #fff;
+    }
+
+
+    .box {
+        @include size(100px, 100px);
+        border: 1px solid #000;
+
+        border: {
+            top: solid 3px #006000;
+            bottom: solid 3px #921aff;
+        }
+
+        background: {
+            color: #000;
+            size: 100%;
+        }
+
+        .btn-blue {
+            @extend %btn;
+            background-color: $btn_blue;
+        }
+
+        .btn-red {
+            @extend %btn;
+            background-color: $btn_red;
+        }
+
+        .btn-yellow {
+            @extend %btn;
+            background-color: $btn_yellow;
+        }
+    }
+}
