@@ -58,7 +58,7 @@
                     if (!isCratePause) {
                         isCratePause = true;
                         return '<span class="' + className + '"></span>' +
-                            '<button id="pause"> || </button>'
+                            '<button id="pause" data-content="暫停投影片"> || </button>'
                     } else {
                         return '<span class="' + className + '"></span>';
                     }
@@ -70,7 +70,19 @@
             autoplay: {
                 delay: 3000,
             },
-
+            // breakpoints: {
+            //     //当宽度小于等于320
+            //     320: {
+            //         slidesPerView: 1,
+            //         slidesPerColumn: 2
+            //     },
+            // },
+            // //当宽度小于等于640
+            // 768: {
+            //     slidesPerView: 1,
+            //     slidesPerColumn: 1
+            // }
+    
         });
 
         var btn = document.getElementById("pause");
@@ -79,11 +91,13 @@
         btn.addEventListener('click', function () {
 
             if (swiper.autoplay.running == true) {
-                btn.innerHTML = "&#9656 ";
+                btn.innerHTML = "&#9656";
                 swiper.autoplay.stop();
+                btn.setAttribute('data-content', "開始撥放");
             } else {
-                btn.innerHTML = "|| ";
+                btn.innerHTML = "||";
                 swiper.autoplay.start();
+                btn.setAttribute('data-content', "暫停播放");
             }
 
             // isGo = !isGo;  

@@ -9,11 +9,32 @@
 </head>
 
 <body>
+    <div id="scene">
+        <div data-depth="0.2">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer1.png" alt="">
+        </div>
+        <div data-depth="0.3">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer2.png" alt="">
+        </div>
+        <div data-depth="0.4">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer3.png" alt="">
+        </div>
+        <div data-depth="0.5">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer4.png" alt="">
+        </div>
+        <div data-depth="0.6">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer5.png" alt="">
+        </div>
+        <div data-depth="0.7">
+            <img src="https://raw.githubusercontent.com/wagerfield/parallax/master/examples/assets/images/layer6.png" alt="">
+        </div>
+    </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"
-        integrity="sha512-Blu6KWaTqestULmtJUTB2mwDFTB/FDRuTHV52Uu5dTFVQZ8YWUq2LuxN/brNEjWAqlHr50oAbxrydsuxoK/mqQ=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+    </script>
 </body>
 
 </html>

@@ -47,17 +47,26 @@ body {
             width: 30px;
             height: 30px;
             top: 50%;
-            left: 55%;
+            left: 53%;
             transform: translate(-50%, -50%);
             border: 1px solid #000;
             cursor: pointer;
 
-            &:hover {
-                span {
-                    display: block;
-                }
-            }
+            // &:hover {
+            //     span {
+            //         display: block;
+            //     }
+            // }
 
+            &:focus::after, &:hover::after {
+                content: attr(data-content);
+                width: 100px;
+                height: 20px;
+                position: absolute;
+                left: 50px;
+                top: 0px;
+                border: 1px solid black;
+            }
 
             // &:focus {
             //     background-color: #000;
@@ -74,6 +83,7 @@ body {
                 right: -110px;
                 transform: translateY(-50%);
                 display: none;
+                border: 1px solid black;
             }
         }
     }
