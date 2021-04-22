@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/swiper_teacher.css">
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="/img/computer1-1600.png" alt="">
+        <div class="block">
+          <h1>
+              新上市的 Surface Laptop 4
+          </h1>
+          <p>運用完美結合時尚外型、超薄設計、多工速度和增強效能的裝置，一手包辦</p>
+          <span>深入了解</span>
+      </div>
+    </div>
+    <div class="swiper-slide">
+        <img src="/img/computer2-1600.jpg" alt="">
+    </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+
+  </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    var isCratePause = false;
+    var swiper = new Swiper('.swiper-container', {
+      cssMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        renderBullet: function (index, className) {
+          if (!isCratePause) {
+            isCratePause = true;
+            return '<span class="' + className + '"></span>'+
+              '<button id="pause"> || <span>暫停投影片</span> </button>'
+          } else {
+            return '<span class="' + className + '"></span>';
+          }
+
+        },
+      },
+      mousewheel: true,
+      keyboard: true,
+      autoplay: {
+        delay: 3000,
+      },
+
+    });
+
+    var btn = document.getElementById("pause");
+    // var isGo = true;  
+
+    btn.addEventListener('click', function () {
+
+      if (swiper.autoplay.running == true) {
+        btn.innerHTML = "&#9656 <span>暫停投影片</span>";
+        swiper.autoplay.stop();
+      } else {
+        btn.innerHTML = "|| <span>暫停投影片</span>";
+        swiper.autoplay.start();
+      }
+
+      // isGo = !isGo;  
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css"
+        integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section">Some section</div>
+        <div class="section">
+            <div class="slide" data-anchor="slide1">Two 1</div>
+            <div class="slide" data-anchor="slide2">Two 2</div>
+        </div>
+        <div class="section">Some section</div>
+        <div class="section">Some section
+            <button id="gototop">GO to top</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+        integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+        crossorigin="anonymous"></script>
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling: true,
+            scrollHorizontally: true,
+            navigation: true,
+            navigationTooltips: ['firstSlide', 'secondSlide'],
+            sectionsColor: ['#1235ab', '#aac241', '#77bacc'],
+            anchors: ['page1', 'page2', 'page3', 'page4'],  
+        });
+
+
+        var topBtn = document.querySelector('#gototop');
+        topBtn.addEventListener('click', function(){
+            fullpage_api.moveTo('page1');
+        });
+    </script>
+</body>
+
+</html>
