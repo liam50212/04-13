@@ -29,7 +29,7 @@
         .main {
             background-color: gray;
             width: 100%;
-            height: 900px;
+            height: auto;
         }
 
         .menu {
@@ -62,18 +62,6 @@
         .text {
             position: absolute;
             margin-top: 5px;
-        }
-
-        .foodimg {
-            border-radius: 50%;
-        }
-
-        .food-text>h5 {
-            margin: 0;
-        }
-
-        .total1-span {
-            margin-right: 135px;
         }
     </style>
 </head>
@@ -125,17 +113,18 @@
                 <div class="section-bar d-flex position-relative">
                     <span class="badge text-white" style="background-color:#10B981">1</span>
                     <div class="progress" style="max-width: 180px; width: 180px; height: 10px" ;>
-                        <div class="progress-bar bg-success" role="progressbar" style="width:40%;" aria-valuenow="25"
+                        <div class="progress-bar bg-success" role="progressbar" style="width:100%;" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span class="badge position-absolute" style="left: 250px;">2</span>
+                    <span class="badge position-absolute text-white"
+                        style="left: 250px; background-color:#10B981">2</span>
                     <div class="progress " style="max-width: 180px;width: 180px; height: 10px; left: 310px;" ;>
-                        <div class="progress-bar" role="progressbar" style="width:0%;" aria-valuenow="25"
+                        <div class="progress-bar bg-success" role="progressbar" style="width:40%;" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <span class="badge position-absolute" style="left: 500px;">3</span>
                     <div class="progress " style="max-width: 180px;width: 180px; height: 10px; left: 560px;" ;>
-                        <div class="progress-bar" role="progressbar" style="width:0%;" aria-valuenow="25"
+                        <div class="progress-bar bg-success" role="progressbar" style="width:0%;" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <span class="badge position-absolute" style="left: 750px;">4</span>
@@ -147,51 +136,33 @@
                     <span class="text" style="left: 845px" ;>完成訂購</span>
                 </div>
                 <hr class="mt-5">
-                <h2 class="pt-5 ml-5 mb-4">訂單明細</h2>
-                <div class="section-food d-flex flex-wrap">
-                    <img class="foodimg" src="./img/chicken momo.jpg" style="width: 60px; height: 60px;" alt="">
-                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
-                        <div class="food-text" style="width: 500px;">
-                            <h5>Chicken momo</h5>
-                            <span>#41551</span>
-                            <hr style="width: 880px;">
-                        </div>
-                        <div class="price1 d-flex justify-content-center align-items-center">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <input class="mr-2" type="text" style="width: 20px;height: 20px;">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <span>$10.50</span>
-                        </div>
-                    </div>
-                    <img class="foodimg" src="./img/Spicy Mexican potatoes.jpg" style="width: 60px; height: 60px;" alt="">
-                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
-                        <div class="food-text" style="width: 500px;">
-                            <h5>Spicy Mexican potatoes</h5>
-                            <span>#66999</span>
-                            <hr style="width: 880px;">
-                        </div>
-                        <div class="price1 d-flex justify-content-center align-items-center">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <input class="mr-2" type="text" style="width: 20px;height: 20px;">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <span>$10.50</span>
-                        </div>
-                    </div>
-                    <img class="foodimg" src="./img/Breakfast.jpg" style="width: 60px; height: 60px;" alt="">
-                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
-                        <div class="food-text" style="width: 500px;">
-                            <h5>Breakfast</h5>
-                            <span>#86577</span>
-                            <hr style="width: 880px;">
-                        </div>
-                        <div class="price1 d-flex justify-content-center align-items-center">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <input class="mr-2" type="text" style="width: 20px;height: 20px;">
-                            <button class="mr-2" style="width: 20px;height: 20px;"></button>
-                            <span>$10.50</span>
-                        </div>
-                    </div>
+                <h2 class="pt-3 ml-5 mb-4">付款方式</h2>
+                <div class="pay-input mb-5">
+                    <input type="radio" name="color">
+                    <span>信用卡付款</span>
                 </div>
+                <hr>
+                <div class="pay-input mb-5">
+                    <input type="radio" name="color">
+                    <span>網路 ATM</span>
+                </div>
+                <hr>
+                <div class="pay-input mb-5">
+                    <input type="radio" name="color">
+                    <span>超商代碼</span>
+                </div>
+                <hr>
+                <h2 class="pt-3 ml-5 mb-4">運送方式</h2>
+                <div class="pay-input mb-5">
+                    <input type="radio" name="color2">
+                    <span>黑貓宅配</span>
+                </div>
+                <hr>
+                <div class="pay-input mb-4">
+                    <input type="radio" name="color2">
+                    <span>超商店到店</span>
+                </div>
+                <hr>
                 <div class="total">
                     <div class="total-1 text-right mr-5">
                         <span class="total1-span">數量:</span>
@@ -211,18 +182,20 @@
                     </div>
                     <hr style="width: 880px;">
                 </div>
-                <div class="section-next d-flex justify-content-between px-4">
-                    <div class="return" style="font-size:20px" ;>
-                        <i class="bi bi-arrow-left-short"></i>
-                        <span>返回購物</span>
+                <div class="section-next d-flex justify-content-between px-4 mb-5">
+                    <div class="return mb-5">
+                        <a href="./cart.html">
+                            <button type="button" class="btn btn-primary bg-white text-primary">上一步</button>
+                        </a>
                     </div>
                     <div class="next">
-                        <a href="./cart2.html">
+                        <a href="./cart3.html">
                             <button type="button" class="btn btn-primary">下一步</button>
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <footer>
