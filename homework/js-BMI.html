@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .content{
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            border-style:dotted ;
+            border-color: cyan;
+            /* background-color: darkcyan; */
+        }
+
+        .section{
+            width: 100%;
+            height: 33%;
+            text-align: center;
+        }
+
+        #number1,#number2{
+            width: 100px;
+        }
+
+        .answer{
+            width: 300px;
+            height: 20px;
+            border: 1px solid black;
+            margin: auto;
+            margin-top: 30px;
+        }
+        
+        .section3{
+            background-color: lemonchiffon;
+        }
+
+        .list{
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+
+        .list-top{
+            border-style:dotted ;
+            border-color: cyan;
+        }
+        
+        .section3 ul{
+            padding: 0 60px;
+        }
+
+        .section3 ul li{
+            list-style-type: none;
+        }
+        
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        table {
+        width:100%;
+        }
+
+        table,th,td{ 
+        border-style:dotted;
+        border: 1px solid cyan;
+        }
+        th{
+        height:50px;
+        }
+        tr { 
+        border-bottom:1px solid #000; 
+        }
+        td{
+        text-align:center;
+        }
+
+        /* th {color:red;} */
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="section section1">
+            <h3>BMI 計算機</h3>
+            <h4>身體質量數值(Body Mass Index，簡稱BMI)是公認用來評估肥胖程度的方法</h4>
+            <h5>BMI = 體重(公斤)/身高的平方(公尺)</h5>
+        </div>
+
+
+        <div class="section section2">
+            我的身高:
+            <input type="number" name="" id="number1">公分
+            我的體重:
+            <input type="number" name="" id="number2">公斤
+            <!-- <div id="count"> </div>
+            <div id="icon"> </div> -->
+            <!-- <button onclick="start()">請點我</button>
+            <button onclick="clean()">清空頁面</button> -->
+            <button id="calc">計算</button>
+            <button id="reset">重新填寫</button>
+            <div class="answer"></div>
+            
+        </div>
+
+
+        <div class="section section3">
+            <div class="list-top">
+                <ul>
+                    <li>
+                        <a href="">BMI值</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list">
+                <table> 
+                    <tr> 
+                    <th></th> 
+                    <th>男性</th> 
+                    <th>女性</th>  
+                    </tr> 
+                    <tr> 
+                    <td>體重過輕</td> 
+                    <td><20</td> 
+                    <td><19</td> 
+                    </tr> 
+                    <tr> 
+                    <td>正常範圍</td> 
+                    <td>20-25</td> 
+                    <td>19-25</td> 
+                    </tr> 
+                    <tr> 
+                    <td>體重過重</td> 
+                    <td class="fail">25-30</td> 
+                    <td>25-30</td> 
+                    </tr> 
+                <tr> 
+                    <td>肥胖</td> 
+                    <td class="fail">30-40</td> 
+                    <td>30-40</td> 
+                    </tr> 
+                <tr> 
+                    <td>病態肥胖</td> 
+                    <td class="fail">>40</td> 
+                    <td>>40</td>  
+                    </tr> 
+                </table>
+            </div>
+            <!-- <div class="list">
+                <ul id="list-1" >
+                    <li></li>
+                    <li>
+                        <a href="">體重過輕</a>
+                    </li>
+                    <li>
+                        <a href="">正常範圍</a>
+                    </li>
+                    <li>
+                        <a href="">體重過重</a>
+                    </li>
+                    <li>
+                        <a href="">肥胖</a>
+                    </li>
+                    <li>
+                        <a href="">病態肥胖</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>男性</li>
+                    <li>
+                        <a href=""><20</a>
+                    </li>
+                    <li>
+                        <a href="">20-25</a>
+                    </li>
+                    <li>
+                        <a href="">25-30</a>
+                    </li>
+                    <li>
+                        <a href="">30-40</a>
+                    </li>
+                    <li>
+                        <a href="">>40</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>女性</li>
+                    <li>
+                        <a href=""><19</a>
+                    </li>
+                    <li>
+                        <a href="">19-25</a>
+                    </li>
+                    <li>
+                        <a href="">25-30</a>
+                    </li>
+                    <li>
+                        <a href="">30-40</a>
+                    </li>
+                    <li>
+                        <a href="">>40</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+
+    
+
+    <script>
+        var calcBtn = document.querySelector('#calc');
+        calcBtn.addEventListener('click',function() {
+            var inputValue1 = document.querySelector('#number1').value; 
+            var inputValue2 = document.querySelector('#number2').value;
+            var test = Number(inputValue2)/(Number(inputValue1)**2);
+            document.querySelector('.answer').innerHTML = test
+            console.log(test);
+        })
+    </script>
+</body>
+</html>
