@@ -67,6 +67,22 @@
         .total1-span {
             margin-right: 135px;
         }
+
+        .foodimg {
+            border-radius: 50%;
+        }
+
+        .food-text>h5 {
+            margin: 0;
+        }
+
+        .data {
+            font-size: 20px;
+        }
+
+        .email-1 {
+            margin-right: 40px;
+        }
     </style>
 </head>
 
@@ -126,12 +142,14 @@
                         <div class="progress-bar bg-success" role="progressbar" style="width:100%;" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span class="badge position-absolute text-white" style="left: 500px; background-color:#10B981">3</span>
-                    <div class="progress " style="max-width: 180px;width: 180px; height: 10px; left: 560px; " ;>
-                        <div class="progress-bar bg-success" role="progressbar" style="width:40%;" aria-valuenow="25"
+                    <span class="badge position-absolute text-white"
+                        style="left: 500px; background-color:#10B981">3</span>
+                    <div class="progress " style="max-width: 180px;width: 180px; height: 10px; left: 560px;" ;>
+                        <div class="progress-bar bg-success" role="progressbar" style="width:100%;" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span class="badge position-absolute" style="left: 750px;">4</span>
+                    <span class="badge position-absolute text-white"
+                        style="left: 750px; background-color:#10B981">4</span>
                 </div>
                 <div class="section-text d-flex position-relative">
                     <span class="text" style="left: 80px" ;>確認購物車</span>
@@ -140,17 +158,65 @@
                     <span class="text" style="left: 845px" ;>完成訂購</span>
                 </div>
                 <hr class="mt-5">
-                <h2 class="pt-3 ml-5 mb-4">寄送方式</h2>
-                <h3 class="ml-5">姓名</h3>
-                <input class="ml-5" style="width: 90%;height: 45px;" type="text" name="" id="" placeholder="王小明">
-                <h3 class="ml-5">電話</h3>
-                <input class="ml-5" style="width: 90%;height: 45px;" type="text" name="" id="" placeholder="0912345678">
-                <h3 class="ml-5">Email</h3>
-                <input class="ml-5" style="width: 90%;height: 45px;" type="text" name="" id="" placeholder="abc123@gmail.com">
-                <h3 class="ml-5">地址</h3>
-                <input class="ml-5" style="width: 45%;height: 45px;"type="text" name="" id="" placeholder="城市">
-                <input class="" style="width: 44.5%;height: 45px;" type="text" name="" id="" placeholder="郵遞區號"><br>
-                <input class="ml-5 mt-2 mb-5" style="width: 90%;height: 45px;" type="text" name="" id="" placeholder="地址">
+                <h1 style="text-align: center;">訂單成立</h1>
+                <h4 class="pt-5 ml-5 mb-4">訂單明細</h4>
+                <div class="section-food d-flex flex-wrap">
+                    <img class="foodimg ml-3" src="./img/chicken momo.jpg" style="width: 60px; height: 60px;" alt="">
+                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
+                        <div class="food-text mb-3" style="width: 500px;">
+                            <h5>Chicken momo</h5>
+                            <span>#41551</span>
+                            <hr style="width: 880px;">
+                        </div>
+                        <div class="price1 d-flex justify-content-center align-items-center">
+                            <div class="quantity mr-5">x1</div>
+                            <span>$10.50</span>
+                        </div>
+                    </div>
+                    <img class="foodimg ml-3" src="./img/Spicy Mexican potatoes.jpg" style="width: 60px; height: 60px;"
+                        alt="">
+                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
+                        <div class="food-text  mb-3" style="width: 500px;">
+                            <h5>Spicy Mexican potatoes</h5>
+                            <span>#66999</span>
+                            <hr style="width: 880px;">
+                        </div>
+                        <div class="price1 d-flex justify-content-center align-items-center">
+                            <div class="quantity mr-5">x1</div>
+                            <span>$10.50</span>
+                        </div>
+                    </div>
+                    <img class="foodimg ml-3" src="./img/Breakfast.jpg" style="width: 60px; height: 60px;" alt="">
+                    <div class="food1 d-flex justify-content-between mb-3" style="width: 90%;">
+                        <div class="food-text  mb-5" style="width: 500px;">
+                            <h5>Breakfast</h5>
+                            <span>#86577</span>
+                        </div>
+                        <div class="price1 d-flex justify-content-center align-items-center">
+                            <div class="quantity mr-5">x1</div>
+                            <span>$10.50</span>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="ml-5 mb-4">寄送資料</h4>
+                <div class="data ml-5">
+                    <div class="name mb-4">
+                        <span class="mr-5">姓名</span>
+                        <span>王曉明</span>
+                    </div>
+                    <div class="phone mb-4">
+                        <span class="mr-5">電話</span>
+                        <span>0912345678</span>
+                    </div>
+                    <div class="e-mail mb-4">
+                        <span class="email-1">Email</span>
+                        <span>abc123@gmail.com</span>
+                    </div>
+                    <div class="address mb-4">
+                        <span class="mr-5">地址</span>
+                        <span>409 台中市小鎮村英雄路1號</span>
+                    </div>
+                </div>
                 <hr style="width: 90%;">
                 <div class="total">
                     <div class="total-1 text-right mr-5">
@@ -171,15 +237,10 @@
                     </div>
                     <hr style="width: 880px;">
                 </div>
-                <div class="section-next d-flex justify-content-between px-4 mb-5">
-                    <div class="return mb-5">
-                        <a href="./cart2.html">
-                            <button type="button" class="btn btn-primary bg-white text-primary">上一步</button>
-                        </a>
-                    </div>
-                    <div class="next">
-                        <a href="./cart4.html">
-                            <button type="button" class="btn btn-primary">前往付款</button>
+                <div class="section-next px-4 mb-5">
+                    <div class="next text-right">
+                        <a href="./cart.html">
+                            <button  type="button" class="btn btn-primary mb-5">返回首頁</button>
                         </a>
                     </div>
                 </div>
