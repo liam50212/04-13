@@ -115,9 +115,9 @@
             男<input type="radio" name="gender" id="">
             女<input type="radio" name="gender" id="">
             我的身高:
-            <input type="number" name="" id="number1"  x-model="number1">公分
+            <input type="number" name="" id="number1 height"  x-model="height">公分
             我的體重:
-            <input type="number" name="" id="number2"  x-model="number2">公斤
+            <input type="number" name="" id="number2 weight"  x-model="weight">公斤
             <!-- <button id="calc">計算</button> -->
             <button id="reset" @click=" reset()">重新填寫</button>
             <div id="answer" x-text="bmi()"></div>
@@ -173,15 +173,15 @@
         <script>
             function setData(){
                 return {
-                    number1: 0,
-                    number2: 0,
+                    height: 0,
+                    weight: 0,
                     bmi(){
-                        var ans = this.number2 / ((this.number1 / 100) ** 2);
+                        var ans = this.weight / ((this.height / 100) ** 2);
                         return ans? ans:0;
                     },
                     reset(){
-                        this.number2 = 0;
-                        this.number1 = 0;
+                        this.weight = 0;
+                        this.height = 0;
                     }
                 }
             }
