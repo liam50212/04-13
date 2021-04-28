@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <style>
+        .btn {
+            width: 100px;
+            height: 50px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body x-data="setData()">
+    <img :src="img" alt="" :width="width">
+    <button class="btn" @click="changeImg()">換圖片</button>
+    <button class="btn" @click.once="width+=100">變寬</button>
+    <hr>
+    <div x-text="'目前選到的區塊是:'+currentBox"></div>
+
+    <!-- <button class="btn" @click="currentBox = 'btn1'">按鈕1</button>
+    <button class="btn" @click="currentBox = 'btn2'">按鈕2</button>
+    <button class="btn" @click="currentBox = 'btn3'">按鈕3</button> -->
+
+    <template x-for="block in blocks" :key="block">
+        <button class="btn" @click="currentBox = block['block']" x-text="block['btn']"></button>
+    </template>
+
+    <template x-for="block in blocks" :key="block">
+        <div class="box" x-show="currentBox == block['block']" x-text="block['block']"></div>
+    </template>
+    
+
+    <!-- <div class="box" x-show="currentBox == '區塊一'">區塊一</div>
+    <div class="box" x-show="currentBox == '區塊二'">區塊二</div>
+    <div class="box" x-show="currentBox == '區塊三'">區塊三</div> -->
+
+    <!-- <template x-if="currentBox == 'btn1'">
+        <div class="box" >區塊一</div>
+    </template>
+    <template x-if="currentBox == 'btn2'">
+        <div class="box" >區塊二</div>
+    </template>
+    <template x-if="currentBox == 'btn3'">
+        <div class="box" >區塊三</div>
+    </template> -->
+
+    <script>
+        function setData() {
+            return {
+                currentBox: '',
+                img: '/img/dog2.jpg',
+                width: 100,
+                blocks: [
+                    {
+                        btn: "按鈕1",
+                        block: "區塊一"
+                    },
+                    {
+                        btn: "按鈕2",
+                        block: "區塊二"
+                    },
+                    {
+                        btn: "按鈕3",
+                        block: "區塊三"
+                    }
+                ],
+                changeImg() {
+                    if (this.img == '/img/dog2.jpg') {
+                        this.img = '/img/dog1.jpg'
+                    } else {
+                        this.img = '/img/dog2.jpg'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- <input type="text">
+    <input type="text">
+    <div>結果為:<span></span></div> -->
+
+    <!-- <div x-data="{ tab: 'foo' }">
+        <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
+        <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
+    
+        <div x-show="tab === 'foo'">Tab Foo</div>
+        <div x-show="tab === 'bar'">Tab Bar</div>
+    </div> -->
+
+
+</body>
+
+</html>
