@@ -83,13 +83,19 @@
         .email-1 {
             margin-right: 40px;
         }
+
+        .dropdown-menu {
+            /* left: 1100px; */
+            left: 70%;
+            top: 70px;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-4" style="font-size:20px" ;>
         <div class="container">
-            <a class="navbar-brand px-3" href="#" style="width: 120px;">
+            <a class="navbar-brand px-3" href="./bootstrap-w.html" style="width: 120px;">
                 <img src="./img/logo.svg" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -116,11 +122,13 @@
                             <i class="bi bi-cart-fill"></i>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link" href="#">
-                            <i class="bi bi-person-circle"></i>
-                        </a>
-                    </li>
+                    <a class="nav-link text-body" href="" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                    <div class="dropdown-menu position-absolute" ; aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="./log-in.html">Login</a>
+                    </div>
                 </ul>
             </div>
         </div>
