@@ -102,7 +102,7 @@
     </style>
 </head>
 
-<body  x-data="setData()">
+<body x-data="setData()">
     <div class="content">
         <div class="section section1">
             <h3>BMI 計算機</h3>
@@ -111,13 +111,13 @@
         </div>
 
 
-        <div class="section section2" >
-            男<input type="radio" name="gender" id="">
-            女<input type="radio" name="gender" id="">
+        <div class="section section2">
+            男<input type="radio" name="gender" value="0" x-model="gender" class="gender">
+            女<input type="radio" name="gender" value="1" x-model="gender" class="gender">
             我的身高:
-            <input type="number" name="" id="number1 height"  x-model="height">公分
+            <input type="number" name="" id="number1 height" x-model="height">公分
             我的體重:
-            <input type="number" name="" id="number2 weight"  x-model="weight">公斤
+            <input type="number" name="" id="number2 weight" x-model="weight">公斤
             <!-- <button id="calc">計算</button> -->
             <button id="reset" @click=" reset()">重新填寫</button>
             <div id="answer" x-text="bmi()"></div>
@@ -143,9 +143,9 @@
                     <tr>
                         <td>體重過輕</td>
                         <td>
-                            <20< /td>
+                            <20</td>
                         <td>
-                            <19< /td>
+                            <19</td>
                     </tr>
                     <tr>
                         <td>正常範圍</td>
@@ -171,20 +171,55 @@
             </div>
         </div>
         <script>
-            function setData(){
+            function setData() {
                 return {
                     height: 0,
                     weight: 0,
-                    bmi(){
+                    gender: 0,
+                    bmi() {
                         var ans = this.weight / ((this.height / 100) ** 2);
-                        return ans? ans:0;
+                        ans = ans ? ans : 0;
+                        if (this.gender == 0) {
+                            if (ans < 20) {
+                                return `BMI為${ans}，體重過輕`;
+                            }
+                            else if (ans < 25) {
+                                return `BMI為${ans}，正常範圍`;
+                            }
+                            else if (ans < 30) {
+                                return `BMI為${ans}，體重過重`;
+                            }
+                            else if (ans < 40) {
+                                return `BMI為${ans}，肥胖`;
+                            }
+                            else {
+                                return `BMI為${ans}，病態肥胖`;
+                            }
+                        }
+                        else if (this.gender == 1) {
+                            if (ans < 19) {
+                                return `BMI為${ans}，體重過輕`;
+                            }
+                            else if (ans < 25) {
+                                return `BMI為${ans}，正常範圍`;
+                            }
+                            else if (ans < 30) {
+                                return `BMI為${ans}，體重過重`;
+                            }
+                            else if (ans < 40) {
+                                return `BMI為${ans}，肥胖`;
+                            }
+                            else {
+                                return `BMI為${ans}，病態肥胖`;
+                            }
+                        }
                     },
                     reset(){
-                        this.weight = 0;
-                        this.height = 0;
-                    }
+                    this.weight = 0;
+                    this.height = 0;
                 }
             }
+        }
 
 
 
